@@ -90,11 +90,11 @@ const App = () => {
 				</div>
 			</div>
 			<div className="flex h-28 md:h-40 my-8 md:max-w-lg mx-6 md:mx-auto gap-4 md:gap-10">
-				<div className="flex-1 text-center bg-white rounded-lg shadow-lg bg-slate-800">
+				<div className="flex-1 text-center rounded-lg shadow-lg bg-slate-800">
 					<WiSunrise className="w-full h-2/3 md:h-4/5 text-amber-600" />
 					<p className="font-title">{getTime(apiRes["daily"]["sunrise"][0])}</p>
 				</div>
-				<div className="flex-1 text-center bg-white rounded-lg shadow-lg bg-slate-800">
+				<div className="flex-1 text-center rounded-lg shadow-lg bg-slate-800">
 					<WiSunset className="w-full h-2/3 md:h-4/5 text-amber-400" />
 					<p className=" font-title">{getTime(apiRes["daily"]["sunset"][0])}</p>
 				</div>

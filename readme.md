@@ -10,7 +10,7 @@ Forked from bhendi-boi/WeatherUps
 Original
 [weatherups.vercel.app/](https://weatherups.vercel.app/)
 Replica
-[github pages]()
+[pages](https://weather-app-flame-theta.vercel.app/)
 
 ## Resources used
 
