@@ -72,19 +72,19 @@ const App = () => {
 						{getIcon({ weatherCode: currentWeather.weathercode, night: night })}
 					</div>
 				</div>
-				<div className="pb-3 md:ml-4 md:text-lg text-neutral-800 dark:text-neutral-200 z-10 relative">
+				<div className="pb-3 md:ml-4 text-neutral-800 dark:text-neutral-200 z-10 relative">
 					<div className="flex justify-between">
 						<div>
-							<p>Indoor temp</p>
-							<Temp temp={TODAYS_DATA.apparentMaxTemperature} />
+							<p className="text-sm">Indoor temp</p>
+							<Temp className="text-sm" temp={TODAYS_DATA.apparentMaxTemperature} />
+						</div>
+						<div className="text-sm">
+							<p className="text-sm">Humidity</p>
+							<p className="text-sm">{TODAYS_DATA.humidity}%</p>
 						</div>
 						<div>
-							<p>Humidity</p>
-							{TODAYS_DATA.humidity}%
-						</div>
-						<div>
-							<p>Air Quality</p>
-							<p>{TODAYS_DATA.airQuality}</p>
+							<p className="text-sm">Air Quality</p>
+							<p className="text-sm">{TODAYS_DATA.airQuality}</p>
 						</div>
 					</div>
 				</div>

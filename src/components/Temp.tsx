@@ -2,15 +2,18 @@ type TempProps = {
 	temp: number;
 	color?: string;
 	high?: boolean;
+	className?: string;
 };
 
-const Temp = ({ temp, high, color }: TempProps) => {
+const Temp = ({ temp, high, color, className }: TempProps) => {
 	return (
 		<span
 			className={
 				"after:content-['°C'] " +
 				(high ? "font-medium " : "") +
-				(color ? `text-${color}` : "")
+				(color ? `text-${color}` : "") +
+				" " +
+				(className || "")
 			}
 		>
 			{temp}
