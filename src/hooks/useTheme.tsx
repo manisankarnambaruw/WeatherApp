@@ -13,23 +13,17 @@ const useTheme = (): useThemeReturnTypes => {
 		}
 		return window.matchMedia("(prefers-color-scheme: dark)").matches
 			? "dark"
-			: "light";
+			: "dark";
 	});
 
 	useEffect(() => {
 		const root = window.document.documentElement;
-		if (theme === "dark") {
-			root.classList.remove("light");
-			root.classList.add("dark");
-		} else {
-			root.classList.remove("dark");
-			root.classList.add("light");
-		}
+		root.classList.add("dark");
 		localStorage.setItem("theme", theme);
 	}, [theme]);
 
 	const toggleTheme = () => {
-		setTheme((prev) => (prev === "light" ? "dark" : "light"));
+		setTheme((prev) => (prev === "light" ? "dark" : "dark"));
 	};
 	return {
 		theme,

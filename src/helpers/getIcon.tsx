@@ -16,21 +16,21 @@ type getIconProps = {
 export default function getIcon({ weatherCode, night = false }: getIconProps) {
 	if (weatherCode === 0) {
 		if (night) {
-			return <BsMoon className="w-full h-full" />;
+			return <BsMoon className="w-1/2 h-1/2 float-right" />;
 		}
-		return <BsSun className="w-full h-full" />;
+		return <BsSun className="w-1/2 h-1/2 float-right" />;
 	}
 	if (weatherCode >= 1 && weatherCode <= 3) {
 		if (night) {
-			return <BsCloudMoon className="w-full h-full" />;
+			return <BsCloudMoon className="w-1/2 h-1/2 float-right" />;
 		}
-		return <BsCloudSun className="w-full h-full" />;
+		return <BsCloudSun className="w-1/2 h-1/2 float-right" />;
 	}
 	if (weatherCode === 45 || weatherCode === 48) {
 		if (night) {
-			return <WiNightFog className="w-full h-full" />;
+			return <WiNightFog className="w-1/2 h-1/2 float-right" />;
 		}
-		return <WiDayFog className="w-full h-full" />;
+		return <WiDayFog className="w-1/2 h-1/2 float-right" />;
 	}
 	if (
 		weatherCode === 51 ||
@@ -39,7 +39,7 @@ export default function getIcon({ weatherCode, night = false }: getIconProps) {
 		weatherCode === 56 ||
 		weatherCode === 57
 	) {
-		return <SiCentos className="w-full h-full" />;
+		return <SiCentos className="w-1/2 h-1/2 float-right" />;
 	}
 	if (
 		weatherCode === 61 ||
@@ -47,12 +47,12 @@ export default function getIcon({ weatherCode, night = false }: getIconProps) {
 		weatherCode === 65 ||
 		(weatherCode >= 80 && weatherCode <= 82)
 	) {
-		return <BsCloudRain className="w-full h-full" />;
+		return <BsCloudRain className="w-1/2 h-1/2 float-right" />;
 	}
 	if (weatherCode === 66 || weatherCode === 67) {
 		return;
 	}
 	if (weatherCode === 95 || weatherCode === 96 || weatherCode === 99) {
-		return <IoThunderstormOutline className="w-full h-full" />;
+		return <IoThunderstormOutline className="w-1/2 h-1/2 float-right" />;
 	}
 }

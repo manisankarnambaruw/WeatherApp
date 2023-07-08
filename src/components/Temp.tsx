@@ -8,7 +8,7 @@ const Temp = ({ temp, high, color }: TempProps) => {
 	return (
 		<span
 			className={
-				"after:content-['°'] " +
+				"after:content-['°C'] " +
 				(high ? "font-medium " : "") +
 				(color ? `text-${color}` : "")
 			}

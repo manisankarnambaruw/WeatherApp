@@ -19,19 +19,47 @@ function getCurrentTime(apiRes: any) {
 				return "";
 		}
 	}
+
+	function getCurrentMonth(num: number) {
+		switch (num) {
+			case 1:
+				return "February";
+			case 2:
+				return "MArch";
+			case 3:
+				return "April";
+			case 4:
+				return "May";
+			case 5:
+				return "June";
+			case 6:
+				return "July";
+			case 7:
+				return "August";
+			case 8:
+				return "September";
+			case 9:
+				return "October";
+			case 10:
+				return "Novomber";
+			case 11:
+				return "December";
+			case 0:
+				return "January";
+			default:
+				return "";
+		}
+	}
 	const timeStamp = apiRes["current_weather"]["time"];
-	const TIMEZONE = apiRes["timezone_abbreviation"];
 	const date = new Date(timeStamp * 1000);
-	let currentHours = date.getHours();
-	let currentMin = date.getMinutes();
 	return (
 		getCurrentDay(date.getDay()) +
 		", " +
-		currentHours +
-		":" +
-		currentMin +
+		getCurrentMonth(date.getMonth()) +
 		" " +
-		TIMEZONE
+		(date.getDate().toString().length === 1
+			? "0" + date.getDate()
+			: date.getDate())
 	);
 }
 export default getCurrentTime;

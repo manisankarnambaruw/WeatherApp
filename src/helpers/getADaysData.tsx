@@ -5,6 +5,16 @@ export default function getADaysData(apiRes: any, num: number) {
 	const maxTemperature = daily["temperature_2m_max"][num];
 	const minTemperature = daily["temperature_2m_min"][num];
 	const apparentMaxTemperature = daily["apparent_temperature_max"][num];
+
+	const hourly = apiRes["hourly"];
+	const humidity = hourly["relativehumidity_2m"]?.[num];
+	let airQuality = "Poor";
+	if (hourly["pm10"]?.[num] < 50) {
+		airQuality = "Good";
+	} else if (hourly["pm10"]?.[num] < 100) {
+		airQuality = "Moderate";
+	}
+
 	function getCurrentDay(date: Date) {
 		const num = date.getDay();
 		const todaysDate = date.getDate();
@@ -53,5 +63,7 @@ export default function getADaysData(apiRes: any, num: number) {
 		maxTemperature,
 		minTemperature,
 		apparentMaxTemperature: apparentMaxTemperature,
+		humidity,
+		airQuality,
 	} as DailyWeatherCardProps;
 }

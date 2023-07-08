@@ -10,9 +10,8 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Nav />}>
+				<Route path="/">
 					<Route index element={<App />} />
-					<Route path="about" element={<About />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
